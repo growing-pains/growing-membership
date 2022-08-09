@@ -60,3 +60,6 @@ bin/
 *.iws
 
 /logs/
+logs
+
+

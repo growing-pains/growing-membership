@@ -11,10 +11,6 @@ public class MembershipApplication {
 	private static Logger logger = LogManager.getLogger(MembershipApplication.class);
 	public static void main(String[] args) {
 		SpringApplication.run(MembershipApplication.class, args);
-		logger.info("info = {}", "info Test");
-		logger.debug("debug = {}", "debug Test");
-		logger.warn("warn = {}", "warn Test");
-		logger.error("error = {}", "error Test");
+		logger.info("info = {}", MembershipApplication.class);
 	}
-
 }
