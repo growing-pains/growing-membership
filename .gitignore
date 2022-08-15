@@ -59,3 +59,5 @@ bin/
 .idea
 *.iws
 
+/logs/
+logs
