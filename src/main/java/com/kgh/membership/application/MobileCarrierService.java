@@ -7,8 +7,12 @@ import com.kgh.membership.domain.model.mobile.MobileCarrierRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-@Service
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+
 @RequiredArgsConstructor
+@Service
 public class MobileCarrierService {
     private final MobileCarrierVerifier mobileCarrierVerifier;
     private final MobileCarrierRepository mobileCarrierRepository;
@@ -16,5 +20,17 @@ public class MobileCarrierService {
         MobileCarrier mobileCarrier = mobileCarrierVerifier.toEntity(request);
         MobileCarrier saved = mobileCarrierRepository.save(mobileCarrier);
         return MobileCarrierDTO.MobileCarrierResponse.from(saved);
+    }
+
+    public List<MobileCarrierDTO.MobileCarrierResponse> findAllById() {
+        List<MobileCarrier> allById = mobileCarrierRepository.findAll();
+        return MobileCarrierDTO.MobileCarrierResponse.listFrom(allById);
+    }
+
+    public MobileCarrierDTO.MobileCarrierResponse findByCarrierId(Long carrierId){
+        MobileCarrier mobileCarrier = mobileCarrierRepository.findById(carrierId)
+                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 아이디 정보입니다. " + carrierId + " / "));
+        return MobileCarrierDTO.MobileCarrierResponse.from(mobileCarrier);
+
     }
 }

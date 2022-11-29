@@ -61,3 +61,4 @@ bin/
 
 /logs/
 logs
+/src/main/resources/script/**
