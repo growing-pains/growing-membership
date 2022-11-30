@@ -53,7 +53,6 @@ public class MobileCarrier {
     private LocalDateTime createdDate;
 
     @LastModifiedDate
-    @Column(nullable = false)
     private LocalDateTime lastModifiedDate;
 
 }

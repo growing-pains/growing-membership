@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
-
 public class MobileCarrierDTO {
 
     @NoArgsConstructor
@@ -89,7 +88,6 @@ public class MobileCarrierDTO {
                     .createdDate(mobileCarrier.getLastModifiedDate())
                     .build();
         }
-
         public static List<MobileCarrierResponse> listFrom(List<MobileCarrier> mobileCarrierList) {
             return mobileCarrierList.stream().map(mobileCarrier -> MobileCarrierResponse.builder()
                     .id(mobileCarrier.getId())
@@ -100,7 +98,6 @@ public class MobileCarrierDTO {
                     .lastModifiedDate(mobileCarrier.getLastModifiedDate())
                     .build()).collect(Collectors.toList());
         }
-
     }
 
 

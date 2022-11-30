@@ -14,10 +14,10 @@ public interface MobileCarrierAPI {
     @PostMapping
     ResponseEntity<MobileCarrierDTO.MobileCarrierResponse> create(@RequestBody MobileCarrierDTO.CreateMobileCarrier request);
 
-
     @GetMapping
     ResponseEntity<List<MobileCarrierDTO.MobileCarrierResponse>> findAll();
 
     @GetMapping
     ResponseEntity<MobileCarrierDTO.MobileCarrierResponse> findById(@CarrierId Long carrierId);
+
 }
