@@ -27,8 +27,8 @@ public class MobileCarrierController implements MobileCarrierAPI {
 
     @Override
     @GetMapping
-    public ResponseEntity<List<MobileCarrierDTO.MobileCarrierResponse>> findAllById() {
-        List<MobileCarrierDTO.MobileCarrierResponse> allMobileCarriers = mobileCarrierService.findAllById();
+    public ResponseEntity<List<MobileCarrierDTO.MobileCarrierResponse>> findAll() {
+        List<MobileCarrierDTO.MobileCarrierResponse> allMobileCarriers = mobileCarrierService.findAll();
         return ResponseEntity.ok(allMobileCarriers);
     }
 

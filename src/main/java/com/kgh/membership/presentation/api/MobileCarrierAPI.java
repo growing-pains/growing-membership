@@ -16,7 +16,7 @@ public interface MobileCarrierAPI {
 
 
     @GetMapping
-    ResponseEntity<List<MobileCarrierDTO.MobileCarrierResponse>> findAllById();
+    ResponseEntity<List<MobileCarrierDTO.MobileCarrierResponse>> findAll();
 
     @GetMapping
     ResponseEntity<MobileCarrierDTO.MobileCarrierResponse> findById(@CarrierId Long carrierId);

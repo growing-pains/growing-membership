@@ -6,10 +6,8 @@ import com.kgh.membership.domain.model.mobile.MobileCarrier;
 import com.kgh.membership.domain.model.mobile.MobileCarrierRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
+
 
 @RequiredArgsConstructor
 @Service
@@ -22,7 +20,7 @@ public class MobileCarrierService {
         return MobileCarrierDTO.MobileCarrierResponse.from(saved);
     }
 
-    public List<MobileCarrierDTO.MobileCarrierResponse> findAllById() {
+    public List<MobileCarrierDTO.MobileCarrierResponse> findAll() {
         List<MobileCarrier> allById = mobileCarrierRepository.findAll();
         return MobileCarrierDTO.MobileCarrierResponse.listFrom(allById);
     }
