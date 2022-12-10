@@ -49,6 +49,7 @@ public class MobileCarrier {
     private String bizDiv;
 
     @CreatedDate
+    @Column(updatable = false, nullable = false)
     private LocalDateTime createdDate;
 
     @LastModifiedDate

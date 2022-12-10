@@ -12,6 +12,7 @@ public class MobileCarrierVerifier {
     public MobileCarrier toEntity(MobileCarrierDTO.CreateMobileCarrier request){
         return MobileCarrier.builder()
                 .id(null)
+                .brdt(request.getBrdt())
                 .existCarrierDiv(request.getExistCarrierDiv())
                 .registerCarrierDiv(request.getRegisterCarrierDiv())
                 .existPhoneNumber(request.getExistPhoneNumber())
@@ -23,7 +24,7 @@ public class MobileCarrierVerifier {
                 .bizNm(request.getBizNm())
                 .bizDiv(request.getBizDiv())
                 .createdDate(null)
-                .createdDate(null)
+                .lastModifiedDate(null)
                 .build();
     }
 }

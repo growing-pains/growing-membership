@@ -6,13 +6,15 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
-
+import java.util.List;
+import java.util.stream.Collectors;
 public class MobileCarrierDTO {
 
     @NoArgsConstructor
     @Getter
     @AllArgsConstructor
     public static class CreateMobileCarrier {
+        private String id;
         private String brdt;
         private String existCarrierDiv;
         private String registerCarrierDiv;
@@ -31,6 +33,7 @@ public class MobileCarrierDTO {
         public MobileCarrier toEntity(MobileCarrierDTO.CreateMobileCarrier mobileCarrier){
             return MobileCarrier.builder()
                     .id(null)
+                    .brdt(mobileCarrier.getBrdt())
                     .existCarrierDiv(mobileCarrier.getExistCarrierDiv())
                     .registerCarrierDiv(mobileCarrier.getRegisterCarrierDiv())
                     .existPhoneNumber(mobileCarrier.getExistPhoneNumber())
@@ -70,6 +73,7 @@ public class MobileCarrierDTO {
         public static MobileCarrierResponse from(MobileCarrier mobileCarrier){
             return MobileCarrierResponse.builder()
                     .id(mobileCarrier.getId())
+                    .brdt(mobileCarrier.getBrdt())
                     .existCarrierDiv(mobileCarrier.getExistCarrierDiv())
                     .registerCarrierDiv(mobileCarrier.getRegisterCarrierDiv())
                     .existPhoneNumber(mobileCarrier.getExistPhoneNumber())
@@ -84,7 +88,16 @@ public class MobileCarrierDTO {
                     .createdDate(mobileCarrier.getLastModifiedDate())
                     .build();
         }
-
+        public static List<MobileCarrierResponse> listFrom(List<MobileCarrier> mobileCarrierList) {
+            return mobileCarrierList.stream().map(mobileCarrier -> MobileCarrierResponse.builder()
+                    .id(mobileCarrier.getId())
+                    .name(mobileCarrier.getBrdt())
+                    .address(mobileCarrier.getAddress())
+                    .registerPhoneNumber(mobileCarrier.getRegisterPhoneNumber())
+                    .createdDate(mobileCarrier.getCreatedDate())
+                    .lastModifiedDate(mobileCarrier.getLastModifiedDate())
+                    .build()).collect(Collectors.toList());
+        }
     }
 
 
