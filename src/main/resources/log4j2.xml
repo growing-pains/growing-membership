@@ -30,7 +30,6 @@
         <logger name="org.springframework" level="INFO" additivity="false" >
             <AppenderRef ref="console" />
             <AppenderRef ref="saveFile" />
-
         </logger>
 
         <!-- rolling file에는 debug, console에는 info 분리하여 처리 가능하다. -->
