@@ -45,7 +45,7 @@ public class AcceptanceTest {
         return mobileCarrierRepository.save(
                 new MobileCarrier(
                 null,
-                "1",
+                "940525",
                 "1",
                 "1",
                 "01012341234",
@@ -61,5 +61,12 @@ public class AcceptanceTest {
                 )
         );
     }
+    protected void 통신사_회원_생성(){
+
+    }
+    protected void 통신사_회원_조회(){
+
+    }
+
 
 }

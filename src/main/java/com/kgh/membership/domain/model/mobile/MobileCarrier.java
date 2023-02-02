@@ -7,6 +7,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
@@ -50,9 +51,9 @@ public class MobileCarrier {
 
     @CreatedDate
     @Column(updatable = false, nullable = false)
-    private LocalDateTime createdDate;
+    private Date createdDate;
 
     @LastModifiedDate
-    private LocalDateTime lastModifiedDate;
+    private Date lastModifiedDate;
 
 }
