@@ -5,8 +5,13 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+<<<<<<< HEAD
 
 import java.time.LocalDate;
+=======
+import java.time.LocalDateTime;
+import java.util.Date;
+>>>>>>> 6b9084a (feat: 통신사 유저 조개별조회 / 전체조회 / 생성 TDD 적용)
 import java.util.List;
 import java.util.stream.Collectors;
 public class MobileCarrierDTO {
@@ -68,8 +73,13 @@ public class MobileCarrierDTO {
         private String bizNo;
         private String bizNm;
         private String bizDiv;
+<<<<<<< HEAD
         private LocalDate createdDate;
         private LocalDate lastModifiedDate;
+=======
+        private Date createdDate;
+        private Date lastModifiedDate;
+>>>>>>> 6b9084a (feat: 통신사 유저 조개별조회 / 전체조회 / 생성 TDD 적용)
 
         public static MobileCarrierResponse from(MobileCarrier mobileCarrier){
             return MobileCarrierResponse.builder()
