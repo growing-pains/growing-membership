@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -28,7 +28,7 @@ public class MobileCarrierAcceptanceTest extends AcceptanceTest {
         log.info("통신사 멤버 가입");
         MobileCarrier mobileCarrier = mobileCarrierRepository.save(new MobileCarrier(
                 null,
-                "1",
+                "940525",
                 "1",
                 "1",
                 "01012341234",
@@ -42,9 +42,8 @@ public class MobileCarrierAcceptanceTest extends AcceptanceTest {
                 null,
                 null
         ));
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         assertAll (
-                () -> assertThat(mobileCarrier.getId()).isEqualTo(1L),
+                () -> assertThat(mobileCarrier.getId()).isEqualTo(2L),
                 () -> assertThat(mobileCarrier.getBrdt()).isEqualTo("940525"),
                 () -> assertThat(mobileCarrier.getCarrierDiv()).isEqualTo("1"),
                 () -> assertThat(mobileCarrier.getExistCarrierDiv()).isEqualTo("1"),
@@ -52,27 +51,25 @@ public class MobileCarrierAcceptanceTest extends AcceptanceTest {
                 () -> assertThat(mobileCarrier.getName()).isEqualTo("gwanhyeon"),
                 () -> assertThat(mobileCarrier.getBizDiv()).isEqualTo("1"),
                 () -> assertThat(mobileCarrier.getCreatedDate()).isNotNull(),
-                () -> assertThat(simpleDateFormat.format(mobileCarrier.getCreatedDate())).isEqualTo("2023-02-02"),
+                () -> assertThat(mobileCarrier.getCreatedDate()).isEqualTo(LocalDate.now()),
                 () -> assertThat(mobileCarrier.getLastModifiedDate()).isNotNull(),
-                () -> assertThat(simpleDateFormat.format(mobileCarrier.getLastModifiedDate())).isEqualTo("2023-02-02")
+                () -> assertThat(mobileCarrier.getLastModifiedDate()).isEqualTo(LocalDate.now())
         );
     }
     @Test
     void 통신사_멤버_개별_조회한다(){
         통신사_멤버_가입한다();
         Optional<MobileCarrier> response = mobileCarrierRepository.findById(1L);
-
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         MobileCarrier mobileCarrier = response.orElseGet(null);
 
         assertAll(
                 () -> assertThat(mobileCarrier.getId()).isEqualTo(1L),
                 () -> assertThat(mobileCarrier.getCarrierDiv()).isEqualTo("1"),
                 () -> assertThat(mobileCarrier.getName()).isEqualTo("gwanhyeon"),
-                () -> assertThat(mobileCarrier.getBizNm()).isNull(),
+                () -> assertThat(mobileCarrier.getBizNm()).isNotNull(),
                 () -> assertThat(mobileCarrier.getBrdt()).isEqualTo("940525"),
-                () -> assertThat(simpleDateFormat.format(mobileCarrier.getCreatedDate())).isEqualTo("2023-02-02"),
-                () -> assertThat(simpleDateFormat.format(mobileCarrier.getLastModifiedDate())).isEqualTo("2023-02-02")
+                () -> assertThat(mobileCarrier.getCreatedDate()).isEqualTo(LocalDate.now()),
+                () -> assertThat(mobileCarrier.getLastModifiedDate()).isEqualTo(LocalDate.now())
         );
     }
     @Test

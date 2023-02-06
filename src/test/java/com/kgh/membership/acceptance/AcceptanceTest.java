@@ -50,7 +50,7 @@ public class AcceptanceTest {
                 "1",
                 "01012341234",
                 "2",
-                "test",
+                "gwanhyeon",
                  "in Gwanak-gu, Seoul",
                 "1",
                 "1234567890",

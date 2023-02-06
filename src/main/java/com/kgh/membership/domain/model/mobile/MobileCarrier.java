@@ -6,6 +6,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -51,9 +52,9 @@ public class MobileCarrier {
 
     @CreatedDate
     @Column(updatable = false, nullable = false)
-    private Date createdDate;
+    private LocalDate createdDate;
 
     @LastModifiedDate
-    private Date lastModifiedDate;
+    private LocalDate lastModifiedDate;
 
 }
