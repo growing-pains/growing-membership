@@ -5,7 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import java.time.LocalDateTime;
+
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 public class MobileCarrierDTO {
@@ -26,8 +27,8 @@ public class MobileCarrierDTO {
         private String bizNo;
         private String bizNm;
         private String bizDiv;
-        private LocalDateTime createdDate;
-        private LocalDateTime lastModifiedDate;
+        private LocalDate createdDate;
+        private LocalDate lastModifiedDate;
 
 
         public MobileCarrier toEntity(MobileCarrierDTO.CreateMobileCarrier mobileCarrier){
@@ -67,8 +68,8 @@ public class MobileCarrierDTO {
         private String bizNo;
         private String bizNm;
         private String bizDiv;
-        private LocalDateTime createdDate;
-        private LocalDateTime lastModifiedDate;
+        private LocalDate createdDate;
+        private LocalDate lastModifiedDate;
 
         public static MobileCarrierResponse from(MobileCarrier mobileCarrier){
             return MobileCarrierResponse.builder()

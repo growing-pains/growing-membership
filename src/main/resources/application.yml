@@ -12,7 +12,7 @@ spring:
       enabled: true
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: create-drop
       #dialect:hibernate.dialect.MySQL57Dialect
     properties:
       hibernate:
@@ -22,7 +22,7 @@ spring:
   sql:
     init:
       schema-locations: classpath:script/schema-h2.sql
-      mode: always
+      mode: never
 logging:
   config: classpath:log4j2.xml
   level:
