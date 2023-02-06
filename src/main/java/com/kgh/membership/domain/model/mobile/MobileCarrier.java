@@ -52,16 +52,9 @@ public class MobileCarrier {
 
     @CreatedDate
     @Column(updatable = false, nullable = false)
-<<<<<<< HEAD
     private LocalDate createdDate;
 
     @LastModifiedDate
     private LocalDate lastModifiedDate;
-=======
-    private Date createdDate;
-
-    @LastModifiedDate
-    private Date lastModifiedDate;
->>>>>>> 6b9084a (feat: 통신사 유저 조개별조회 / 전체조회 / 생성 TDD 적용)
 
 }
