@@ -10,7 +10,6 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 public class TelecomDTO {
-
     @NoArgsConstructor
     @Getter
     @AllArgsConstructor
@@ -31,22 +30,22 @@ public class TelecomDTO {
         private LocalDate lastModifiedDate;
 
 
-        public Telecom toEntity(TelecomDTO.CreateTelecom Telecom){
+        public Telecom toEntity(TelecomDTO.CreateTelecom telecom){
             return Telecom.builder()
                     .id(null)
-                    .brdt(Telecom.getBrdt())
-                    .existTelecomDiv(Telecom.getExistTelecomDiv())
-                    .registerTelecomDiv(Telecom.getRegisterTelecomDiv())
-                    .existPhoneNumber(Telecom.getExistPhoneNumber())
-                    .registerPhoneNumber(Telecom.getRegisterPhoneNumber())
-                    .name(Telecom.getName())
-                    .address(Telecom.getAddress())
-                    .TelecomDiv(Telecom.getTelecomDiv())
-                    .bizNo(Telecom.getBizNo())
-                    .bizNm(Telecom.getBizNm())
-                    .bizDiv(Telecom.getBizDiv())
+                    .brdt(telecom.getBrdt())
+                    .existTelecomDiv(telecom.getExistTelecomDiv())
+                    .registerTelecomDiv(telecom.getRegisterTelecomDiv())
+                    .existPhoneNumber(telecom.getExistPhoneNumber())
+                    .registerPhoneNumber(telecom.getRegisterPhoneNumber())
+                    .name(telecom.getName())
+                    .address(telecom.getAddress())
+                    .TelecomDiv(telecom.getTelecomDiv())
+                    .bizNo(telecom.getBizNo())
+                    .bizNm(telecom.getBizNm())
+                    .bizDiv(telecom.getBizDiv())
                     .createdDate(null)
-                    .createdDate(null)
+                    .lastModifiedDate(null)
                     .build();
         }
     }
@@ -71,32 +70,32 @@ public class TelecomDTO {
         private LocalDate createdDate;
         private LocalDate lastModifiedDate;
 
-        public static TelecomResponse from(Telecom Telecom){
+        public static TelecomResponse from(Telecom telecom){
             return TelecomResponse.builder()
-                    .id(Telecom.getId())
-                    .brdt(Telecom.getBrdt())
-                    .existTelecomDiv(Telecom.getExistTelecomDiv())
-                    .registerTelecomDiv(Telecom.getRegisterTelecomDiv())
-                    .existPhoneNumber(Telecom.getExistPhoneNumber())
-                    .registerPhoneNumber(Telecom.getRegisterPhoneNumber())
-                    .name(Telecom.getName())
-                    .address(Telecom.getAddress())
-                    .TelecomDiv(Telecom.getTelecomDiv())
-                    .bizNo(Telecom.getBizNo())
-                    .bizNm(Telecom.getBizNm())
-                    .bizDiv(Telecom.getBizDiv())
-                    .createdDate(Telecom.getCreatedDate())
-                    .createdDate(Telecom.getLastModifiedDate())
+                    .id(telecom.getId())
+                    .brdt(telecom.getBrdt())
+                    .existTelecomDiv(telecom.getExistTelecomDiv())
+                    .registerTelecomDiv(telecom.getRegisterTelecomDiv())
+                    .existPhoneNumber(telecom.getExistPhoneNumber())
+                    .registerPhoneNumber(telecom.getRegisterPhoneNumber())
+                    .name(telecom.getName())
+                    .address(telecom.getAddress())
+                    .TelecomDiv(telecom.getTelecomDiv())
+                    .bizNo(telecom.getBizNo())
+                    .bizNm(telecom.getBizNm())
+                    .bizDiv(telecom.getBizDiv())
+                    .createdDate(telecom.getCreatedDate())
+                    .createdDate(telecom.getLastModifiedDate())
                     .build();
         }
-        public static List<TelecomResponse> listFrom(List<Telecom> TelecomList) {
-            return TelecomList.stream().map(Telecom -> TelecomResponse.builder()
-                    .id(Telecom.getId())
-                    .name(Telecom.getBrdt())
-                    .address(Telecom.getAddress())
-                    .registerPhoneNumber(Telecom.getRegisterPhoneNumber())
-                    .createdDate(Telecom.getCreatedDate())
-                    .lastModifiedDate(Telecom.getLastModifiedDate())
+        public static List<TelecomResponse> listFrom(List<Telecom> telecomList) {
+            return telecomList.stream().map(telecom -> TelecomResponse.builder()
+                    .id(telecom.getId())
+                    .name(telecom.getBrdt())
+                    .address(telecom.getAddress())
+                    .registerPhoneNumber(telecom.getRegisterPhoneNumber())
+                    .createdDate(telecom.getCreatedDate())
+                    .lastModifiedDate(telecom.getLastModifiedDate())
                     .build()).collect(Collectors.toList());
         }
     }

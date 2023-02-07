@@ -15,17 +15,17 @@ public class TelecomService {
     private final TelecomVerifier telecomVerifier;
     private final TelecomRepository telecomRepository;
     public TelecomDTO.TelecomResponse create(TelecomDTO.CreateTelecom request) {
-        Telecom Telecom = TelecomVerifier.toEntity(request);
-        Telecom saved = TelecomRepository.save(Telecom);
+        Telecom Telecom = telecomVerifier.toEntity(request);
+        Telecom saved = telecomRepository.save(Telecom);
         return TelecomDTO.TelecomResponse.from(saved);
     }
     public List<TelecomDTO.TelecomResponse> findAll() {
-        List<Telecom> allById = TelecomRepository.findAll();
+        List<Telecom> allById = telecomRepository.findAll();
         return TelecomDTO.TelecomResponse.listFrom(allById);
     }
 
     public TelecomDTO.TelecomResponse findByTelecomId(Long TelecomId){
-        Telecom Telecom = TelecomRepository.findById(TelecomId)
+        Telecom Telecom = telecomRepository.findById(TelecomId)
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 아이디 정보입니다. " + TelecomId + " / "));
         return TelecomDTO.TelecomResponse.from(Telecom);
 

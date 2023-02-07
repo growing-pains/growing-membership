@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping(MembershipController.API_MEMBERSHIP)
-public class MembershipController {
+@RequestMapping(MembershipCardController.API_MEMBERSHIP)
+public class MembershipCardController {
     public static final String API_MEMBERSHIP= "/api/membership";
 
     // 조회

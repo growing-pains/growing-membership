@@ -11,10 +11,10 @@ import java.net.URI;
 import java.util.List;
 
 @RequiredArgsConstructor
-@RequestMapping(TelecomController.API_MOBILE_CARRIER)
+@RequestMapping(TelecomController.API_MOBILE_Telecom)
 @RestController
 public class TelecomController implements TelecomAPI {
-    public static final String API_MOBILE_CARRIER = "/api/carrier";
+    public static final String API_MOBILE_Telecom = "/api/Telecom";
 
 
     private final TelecomService TelecomService;
@@ -22,7 +22,7 @@ public class TelecomController implements TelecomAPI {
     @PostMapping
     public ResponseEntity<TelecomDTO.TelecomResponse> create(@RequestBody TelecomDTO.CreateTelecom request) {
         TelecomDTO.TelecomResponse response = TelecomService.create(request);
-        return ResponseEntity.created(URI.create(API_MOBILE_CARRIER + "/" + response.getId())).body(response);
+        return ResponseEntity.created(URI.create(API_MOBILE_Telecom + "/" + response.getId())).body(response);
     }
 
     @Override
@@ -34,8 +34,8 @@ public class TelecomController implements TelecomAPI {
 
     @Override
     @GetMapping("/{id}")
-    public ResponseEntity<TelecomDTO.TelecomResponse> findById(@CarrierId @PathVariable Long id) {
-        TelecomDTO.TelecomResponse TelecomResponse = TelecomService.findByCarrierId(id);
+    public ResponseEntity<TelecomDTO.TelecomResponse> findById(@TelecomId @PathVariable Long id) {
+        TelecomDTO.TelecomResponse TelecomResponse = TelecomService.findByTelecomId(id);
         return ResponseEntity.ok(TelecomResponse);
     }
 
