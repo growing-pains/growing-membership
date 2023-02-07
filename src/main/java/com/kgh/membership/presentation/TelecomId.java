@@ -8,8 +8,8 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = ValidNumberValidator.class)
 @Documented
-public @interface CarrierId {
-    String message() default "Invalid number";
+public @interface TelecomId {
+    String message() default "Invalid Telecom Id";
 
     Class<?>[] groups() default { };
 

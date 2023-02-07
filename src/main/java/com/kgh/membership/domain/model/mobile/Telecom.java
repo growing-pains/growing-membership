@@ -16,7 +16,7 @@ import java.util.Date;
 @EntityListeners(AuditingEntityListener.class)
 @Entity
 @Builder
-public class MobileCarrier {
+public class Telecom {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,9 +24,9 @@ public class MobileCarrier {
 
     private String brdt;
 
-    private String existCarrierDiv;
+    private String existTelecomDiv;
 
-    private String registerCarrierDiv;
+    private String registerTelecomDiv;
 
     private String existPhoneNumber;
 
@@ -39,7 +39,7 @@ public class MobileCarrier {
     private String address;
 
     @Column(nullable = false)
-    private String carrierDiv;
+    private String TelecomDiv;
 
     @Column(nullable = false)
     private String bizNo;
