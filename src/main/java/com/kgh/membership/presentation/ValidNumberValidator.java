@@ -3,7 +3,7 @@ package com.kgh.membership.presentation;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class ValidNumberValidator implements ConstraintValidator<TelecomId, Long> {
+public class wqㅈㅂValidNumberValidator implements ConstraintValidator<TelecomId, Long> {
     @Override
     public boolean isValid(Long value, ConstraintValidatorContext context) {
         if(value == null){
