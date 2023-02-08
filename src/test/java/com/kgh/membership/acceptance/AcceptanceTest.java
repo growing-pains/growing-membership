@@ -1,5 +1,7 @@
 package com.kgh.membership.acceptance;
 
+import com.kgh.membership.domain.model.mobile.Telecom;
+import com.kgh.membership.domain.model.mobile.TelecomRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +31,7 @@ public class AcceptanceTest {
     private WebApplicationContext context;
 
     @Autowired
-    private MobileCarrierRepository mobileCarrierRepository;
+    private TelecomRepository TelecomRepository;
 
     @BeforeEach
     void init(){
@@ -39,9 +41,9 @@ public class AcceptanceTest {
                 .build();
         signUp();
     }
-    protected MobileCarrier signUp(){
-        return mobileCarrierRepository.save(
-                new MobileCarrier(
+    protected Telecom signUp(){
+        return TelecomRepository.save(
+                new Telecom(
                 null,
                 "940525",
                 "1",
