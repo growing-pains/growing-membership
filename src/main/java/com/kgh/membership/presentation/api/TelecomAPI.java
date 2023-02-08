@@ -1,7 +1,5 @@
 package com.kgh.membership.presentation.api;
 
-import com.kgh.membership.application.dto.TelecomDTO;
-import com.kgh.membership.presentation.TelecomId;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +16,6 @@ public interface TelecomAPI {
     ResponseEntity<List<TelecomDTO.TelecomResponse>> findAll();
 
     @GetMapping
-    ResponseEntity<TelecomDTO.TelecomResponse> findById(@TelecomId Long TelecomId);
+    ResponseEntity<TelecomDTO.TelecomResponse> findById(Long TelecomId);
 
 }

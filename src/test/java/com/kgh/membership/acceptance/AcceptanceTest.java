@@ -1,7 +1,5 @@
 package com.kgh.membership.acceptance;
 
-import com.kgh.membership.domain.model.mobile.Telecom;
-import com.kgh.membership.domain.model.mobile.TelecomRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
