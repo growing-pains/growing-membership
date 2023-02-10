@@ -37,7 +37,7 @@ public class MobileTelecom {
     private String address;
 
     @Column(nullable = false)
-    private String MobileTelecomDiv;
+    private String mobileTelecomDiv;
 
     @Column(nullable = false)
     private String bizNo;
