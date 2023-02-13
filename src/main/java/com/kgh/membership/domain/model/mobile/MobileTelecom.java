@@ -55,4 +55,8 @@ public class MobileTelecom {
     @LastModifiedDate
     private LocalDate lastModifiedDate;
 
+    public boolean isUserNotEqual(Long mobileTelecomId) {
+        return !this.id.equals(mobileTelecomId);
+    }
+
 }

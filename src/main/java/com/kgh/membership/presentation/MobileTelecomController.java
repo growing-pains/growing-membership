@@ -11,10 +11,10 @@ import java.net.URI;
 import java.util.List;
 
 @RequiredArgsConstructor
-@RequestMapping(MobileTelecomController.API_MOBILE_MobileTelecom)
+@RequestMapping(MobileTelecomController.API_MOBILE_TELECOM)
 @RestController
 public class MobileTelecomController implements MobileTelecomAPI {
-    public static final String API_MOBILE_MobileTelecom = "/api/MobileTelecom";
+    public static final String API_MOBILE_TELECOM = "/api/mobileTelecom";
 
 
     private final MobileTelecomService mobileTelecomService;
@@ -22,7 +22,7 @@ public class MobileTelecomController implements MobileTelecomAPI {
     @PostMapping
     public ResponseEntity<MobileTelecomDTO.MobileTelecomResponse> create(@RequestBody MobileTelecomDTO.CreateMobileTelecom request) {
         MobileTelecomDTO.MobileTelecomResponse response = mobileTelecomService.create(request);
-        return ResponseEntity.created(URI.create(API_MOBILE_MobileTelecom + "/" + response.getId())).body(response);
+        return ResponseEntity.created(URI.create(API_MOBILE_TELECOM + "/" + response.getId())).body(response);
     }
 
     @Override
@@ -39,6 +39,12 @@ public class MobileTelecomController implements MobileTelecomAPI {
         return ResponseEntity.ok(MobileTelecomResponse);
     }
 
+    @Override
+    @DeleteMapping("/{mobileTelecomId}")
+    public ResponseEntity<Void> delete(@PathVariable Long mobileTelecomId) {
+        mobileTelecomService.delete(mobileTelecomId);
+        return ResponseEntity.noContent().build();
+    }
 
 
 }

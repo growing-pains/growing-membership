@@ -81,5 +81,13 @@ public class MobileTelecomAcceptanceTest extends AcceptanceTest {
         );
     }
 
+    @Test
+    void 통신사_멤버_삭제(){
+        Optional<MobileTelecom> response =  telecomRepository.findById(1L);
+        telecomRepository.deleteById(response.get().getId());
+        Optional<MobileTelecom> afterDeleteResponse =  telecomRepository.findById(1L);
+        afterDeleteResponse.orElseThrow(()-> new IllegalArgumentException());
+    }
+
 
 }
