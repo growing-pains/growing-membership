@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @EntityListeners(AuditingEntityListener.class)
 @Entity
 @Builder
-public class Telecom {
+public class MobileTelecom {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,9 +22,9 @@ public class Telecom {
 
     private String brdt;
 
-    private String existTelecomDiv;
+    private String existMobileTelecomDiv;
 
-    private String registerTelecomDiv;
+    private String registerMobileTelecomDiv;
 
     private String existPhoneNumber;
 
@@ -37,7 +37,7 @@ public class Telecom {
     private String address;
 
     @Column(nullable = false)
-    private String TelecomDiv;
+    private String mobileTelecomDiv;
 
     @Column(nullable = false)
     private String bizNo;
@@ -54,5 +54,9 @@ public class Telecom {
 
     @LastModifiedDate
     private LocalDate lastModifiedDate;
+
+    public boolean isUserNotEqual(Long mobileTelecomId) {
+        return !this.id.equals(mobileTelecomId);
+    }
 
 }

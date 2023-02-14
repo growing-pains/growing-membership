@@ -1,12 +1,13 @@
 package com.kgh.membership.acceptance;
 
-import com.kgh.membership.domain.model.mobile.Telecom;
-import com.kgh.membership.domain.model.mobile.TelecomRepository;
+import com.kgh.membership.domain.model.mobile.MobileTelecom;
+import com.kgh.membership.domain.model.mobile.MobileTelecomRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
@@ -23,6 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 @Slf4j
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@ActiveProfiles("local")
 public class AcceptanceTest {
 
     private MockMvc mockMvc;
@@ -31,7 +33,7 @@ public class AcceptanceTest {
     private WebApplicationContext context;
 
     @Autowired
-    private TelecomRepository TelecomRepository;
+    private MobileTelecomRepository mobileTelecomRepository;
 
     @BeforeEach
     void init(){
@@ -41,9 +43,9 @@ public class AcceptanceTest {
                 .build();
         signUp();
     }
-    protected Telecom signUp(){
-        return TelecomRepository.save(
-                new Telecom(
+    protected MobileTelecom signUp(){
+        return mobileTelecomRepository.save(
+                new MobileTelecom(
                 null,
                 "940525",
                 "1",

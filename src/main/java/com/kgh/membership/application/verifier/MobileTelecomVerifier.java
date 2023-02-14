@@ -1,25 +1,25 @@
 package com.kgh.membership.application.verifier;
 
-import com.kgh.membership.application.dto.TelecomDTO;
-import com.kgh.membership.domain.model.mobile.Telecom;
+import com.kgh.membership.application.dto.MobileTelecomDTO;
+import com.kgh.membership.domain.model.mobile.MobileTelecom;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
 @Component
-public class TelecomVerifier {
+public class MobileTelecomVerifier {
 
-    public Telecom toEntity(TelecomDTO.CreateTelecom request){
-        return Telecom.builder()
+    public MobileTelecom toEntity(MobileTelecomDTO.CreateMobileTelecom request){
+        return MobileTelecom.builder()
                 .id(null)
                 .brdt(request.getBrdt())
-                .existTelecomDiv(request.getExistTelecomDiv())
-                .registerTelecomDiv(request.getRegisterTelecomDiv())
+                .existMobileTelecomDiv(request.getExistMobileTelecomDiv())
+                .registerMobileTelecomDiv(request.getRegisterMobileTelecomDiv())
                 .existPhoneNumber(request.getExistPhoneNumber())
                 .registerPhoneNumber(request.getRegisterPhoneNumber())
                 .name(request.getName())
                 .address(request.getAddress())
-                .TelecomDiv(request.getTelecomDiv())
+                .mobileTelecomDiv(request.getMobileTelecomDiv())
                 .bizNo(request.getBizNo())
                 .bizNm(request.getBizNm())
                 .bizDiv(request.getBizDiv())

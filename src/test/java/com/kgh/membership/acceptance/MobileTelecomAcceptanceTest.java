@@ -1,7 +1,7 @@
 package com.kgh.membership.acceptance;
 
-import com.kgh.membership.domain.model.mobile.Telecom;
-import com.kgh.membership.domain.model.mobile.TelecomRepository;
+import com.kgh.membership.domain.model.mobile.MobileTelecom;
+import com.kgh.membership.domain.model.mobile.MobileTelecomRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,14 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertAll;
 
 
 @Slf4j
-public class TelecomAcceptanceTest extends AcceptanceTest {
+public class MobileTelecomAcceptanceTest extends AcceptanceTest {
     @Autowired
-    private TelecomRepository telecomRepository;
+    private MobileTelecomRepository telecomRepository;
 
     @BeforeEach
     void init(){
@@ -26,7 +27,7 @@ public class TelecomAcceptanceTest extends AcceptanceTest {
     @Test
     void 통신사_멤버_가입한다(){
         log.info("통신사 멤버 가입");
-        Telecom telecom = telecomRepository.save(new Telecom(
+        MobileTelecom telecom = telecomRepository.save(new MobileTelecom(
                 null,
                 "940525",
                 "1",
@@ -45,9 +46,9 @@ public class TelecomAcceptanceTest extends AcceptanceTest {
         assertAll (
                 () -> assertThat(telecom.getId()).isEqualTo(2L),
                 () -> assertThat(telecom.getBrdt()).isEqualTo("940525"),
-                () -> assertThat(telecom.getTelecomDiv()).isEqualTo("1"),
-                () -> assertThat(telecom.getExistTelecomDiv()).isEqualTo("1"),
-                () -> assertThat(telecom.getRegisterTelecomDiv()).isEqualTo("1"),
+                () -> assertThat(telecom.getMobileTelecomDiv()).isEqualTo("1"),
+                () -> assertThat(telecom.getExistMobileTelecomDiv()).isEqualTo("1"),
+                () -> assertThat(telecom.getRegisterMobileTelecomDiv()).isEqualTo("1"),
                 () -> assertThat(telecom.getName()).isEqualTo("gwanhyeon"),
                 () -> assertThat(telecom.getBizDiv()).isEqualTo("1"),
                 () -> assertThat(telecom.getCreatedDate()).isNotNull(),
@@ -59,12 +60,12 @@ public class TelecomAcceptanceTest extends AcceptanceTest {
     @Test
     void 통신사_멤버_개별_조회한다(){
         통신사_멤버_가입한다();
-        Optional<Telecom> response = telecomRepository.findById(1L);
-        Telecom telecom = response.orElseGet(null);
+        Optional<MobileTelecom> response = telecomRepository.findById(1L);
+        MobileTelecom telecom = response.orElseGet(null);
 
         assertAll(
                 () -> assertThat(telecom.getId()).isEqualTo(1L),
-                () -> assertThat(telecom.getTelecomDiv()).isEqualTo("1"),
+                () -> assertThat(telecom.getMobileTelecomDiv()).isEqualTo("1"),
                 () -> assertThat(telecom.getName()).isEqualTo("gwanhyeon"),
                 () -> assertThat(telecom.getBizNm()).isNotNull(),
                 () -> assertThat(telecom.getBrdt()).isEqualTo("940525"),
@@ -74,10 +75,18 @@ public class TelecomAcceptanceTest extends AcceptanceTest {
     }
     @Test
     void 통신사_멤버_전체_조회한다(){
-        List<Telecom> telecoms = telecomRepository.findAll();
+        List<MobileTelecom> telecoms = telecomRepository.findAll();
         assertAll(
                 () -> assertThat(telecoms.get(0).getId()).isEqualTo(1L)
         );
+    }
+
+    @Test
+    void 통신사_멤버_삭제(){
+        Optional<MobileTelecom> response =  telecomRepository.findById(1L);
+        telecomRepository.deleteById(response.get().getId());
+        Optional<MobileTelecom> afterDeleteResponse =  telecomRepository.findById(1L);
+        afterDeleteResponse.orElseThrow(()-> new IllegalArgumentException());
     }
 
 
