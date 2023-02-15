@@ -23,7 +23,7 @@ public class MobileTelecomDTO {
         private String registerPhoneNumber;
         private String name;
         private String address;
-        private String MobileTelecomDiv;
+        private String mobileTelecomDiv;
         private String bizNo;
         private String bizNm;
         private String bizDiv;
@@ -41,7 +41,8 @@ public class MobileTelecomDTO {
                     .registerPhoneNumber(telecom.getRegisterPhoneNumber())
                     .name(telecom.getName())
                     .address(telecom.getAddress())
-                    .MobileTelecomDiv(telecom.getMobileTelecomDiv())
+                    .mobileTelecomDiv(telecom.getMobileTelecomDiv())
+
                     .bizNo(telecom.getBizNo())
                     .bizNm(telecom.getBizNm())
                     .bizDiv(telecom.getBizDiv())
@@ -64,7 +65,7 @@ public class MobileTelecomDTO {
         private String registerPhoneNumber;
         private String name;
         private String address;
-        private String MobileTelecomDiv;
+        private String mobileTelecomDiv;
         private String bizNo;
         private String bizNm;
         private String bizDiv;
@@ -81,7 +82,7 @@ public class MobileTelecomDTO {
                     .registerPhoneNumber(telecom.getRegisterPhoneNumber())
                     .name(telecom.getName())
                     .address(telecom.getAddress())
-                    .MobileTelecomDiv(telecom.getMobileTelecomDiv())
+                    .mobileTelecomDiv(telecom.getMobileTelecomDiv())
                     .bizNo(telecom.getBizNo())
                     .bizNm(telecom.getBizNm())
                     .bizDiv(telecom.getBizDiv())

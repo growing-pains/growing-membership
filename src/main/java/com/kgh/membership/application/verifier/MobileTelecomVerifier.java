@@ -19,7 +19,7 @@ public class MobileTelecomVerifier {
                 .registerPhoneNumber(request.getRegisterPhoneNumber())
                 .name(request.getName())
                 .address(request.getAddress())
-                .MobileTelecomDiv(request.getMobileTelecomDiv())
+                .mobileTelecomDiv(request.getMobileTelecomDiv())
                 .bizNo(request.getBizNo())
                 .bizNm(request.getBizNm())
                 .bizDiv(request.getBizDiv())
