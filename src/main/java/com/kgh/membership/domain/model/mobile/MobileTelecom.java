@@ -37,7 +37,7 @@ public class MobileTelecom {
     private String address;
 
     @Column(nullable = false)
-    private String MobileTelecomDiv;
+    private String mobileTelecomDiv;
 
     @Column(nullable = false)
     private String bizNo;
@@ -54,5 +54,9 @@ public class MobileTelecom {
 
     @LastModifiedDate
     private LocalDate lastModifiedDate;
+
+    public boolean isUserNotEqual(Long mobileTelecomId) {
+        return !this.id.equals(mobileTelecomId);
+    }
 
 }
