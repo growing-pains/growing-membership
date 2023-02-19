@@ -1,7 +1,7 @@
 package com.kgh.membership.application.verifier;
 
 import com.kgh.membership.application.dto.MobileTelecomDTO;
-import com.kgh.membership.domain.model.mobile.MobileTelecom;
+import com.kgh.membership.domain.model.mobile.telecom.MobileTelecom;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

@@ -1,6 +1,6 @@
 package com.kgh.membership.application.dto;
 
-import com.kgh.membership.domain.model.mobile.MobileTelecom;
+import com.kgh.membership.domain.model.mobile.telecom.MobileTelecom;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
