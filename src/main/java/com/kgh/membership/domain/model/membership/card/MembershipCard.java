@@ -23,7 +23,7 @@ public class MembershipCard {
 
     private String registerEmail;
 
-    private String card_no;
+    private String cardNo;
 
     private String address;
 
@@ -37,4 +37,8 @@ public class MembershipCard {
 
     @LastModifiedDate
     private LocalDate lastModifiedDate;
+
+    public boolean isMembershipCardIdNotEqual(Long membershipCardId) {
+        return !this.id.equals(membershipCardId);
+    }
 }

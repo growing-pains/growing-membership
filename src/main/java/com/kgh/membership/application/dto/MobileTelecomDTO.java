@@ -31,7 +31,7 @@ public class MobileTelecomDTO {
         private LocalDate lastModifiedDate;
 
 
-        public MobileTelecom toEntity(MobileTelecomDTO.CreateMobileTelecom telecom){
+        public static MobileTelecom toEntity(MobileTelecomDTO.CreateMobileTelecom telecom){
             return MobileTelecom.builder()
                     .id(null)
                     .brdt(telecom.getBrdt())
@@ -42,7 +42,6 @@ public class MobileTelecomDTO {
                     .name(telecom.getName())
                     .address(telecom.getAddress())
                     .mobileTelecomDiv(telecom.getMobileTelecomDiv())
-
                     .bizNo(telecom.getBizNo())
                     .bizNm(telecom.getBizNm())
                     .bizDiv(telecom.getBizDiv())

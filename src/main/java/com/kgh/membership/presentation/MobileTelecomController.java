@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping(MobileTelecomController.API_MOBILE_TELECOM)
 @RestController
 public class MobileTelecomController implements MobileTelecomAPI {
-    public static final String API_MOBILE_TELECOM = "/api/mobileTelecom";
+    public static final String API_MOBILE_TELECOM = "/api/mobile-telecom";
     private final MobileTelecomService mobileTelecomService;
     @Override
     @PostMapping
