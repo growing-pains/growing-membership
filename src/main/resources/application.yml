@@ -1,32 +1,4 @@
 spring:
-  datasource:
-    url: jdbc:h2:~/membership
-    #url: jdbc:h2:~/membership;AUTO_SERVER=TRUE
-    # url: jdbc:h2:tcp://localhost/~/membership
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
-    #data-locations: classpath*:initdata/${database}/da
-  h2:
-    console:
-      enabled: true
-  jpa:
-    hibernate:
-      ddl-auto: validate
-      #dialect:hibernate.dialect.MySQL57Dialect
-    properties:
-      hibernate:
-        format_sql: true
-    generate-ddl: false
-    defer-datasource-initialization: true
-  sql:
-    init:
-      schema-locations: classpath:script/schema-h2.sql
-      mode: always
-logging:
-  config: classpath:log4j2.xml
-  level:
-    org.hibernate.SQL: debug
-
-
-
+  config:
+    activate:
+      on-profile: "local"

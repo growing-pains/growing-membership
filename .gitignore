@@ -60,5 +60,4 @@ bin/
 *.iws
 
 /logs/
-logs
 /src/main/resources/script/**

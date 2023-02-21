@@ -13,7 +13,6 @@ import javax.persistence.EntityListeners;
 @EntityListeners(AuditingEntityListener.class)
 @EnableJpaAuditing
 public class MembershipApplication {
-	private static Logger logger = LogManager.getLogger(MembershipApplication.class);
 	public static void main(String[] args) {
 		SpringApplication.run(MembershipApplication.class, args);
 	}
