@@ -1,4 +1,4 @@
-package com.kgh.membership.domain.model.mobile;
+package com.kgh.membership.domain.model.mobile.telecom;
 
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;

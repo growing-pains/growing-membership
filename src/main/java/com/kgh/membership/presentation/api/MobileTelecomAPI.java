@@ -15,10 +15,10 @@ public interface MobileTelecomAPI {
     ResponseEntity<MobileTelecomDTO.MobileTelecomResponse> create(@RequestBody MobileTelecomDTO.CreateMobileTelecom request);
 
     @GetMapping
-    ResponseEntity<List<MobileTelecomDTO.MobileTelecomResponse>> findAll();
+    ResponseEntity<MobileTelecomDTO.MobileTelecomResponse> findById(Long mobileTelecomId);
 
     @GetMapping
-    ResponseEntity<MobileTelecomDTO.MobileTelecomResponse> findById(Long mobileTelecomId);
+    ResponseEntity<List<MobileTelecomDTO.MobileTelecomResponse>> findAll();
 
     @DeleteMapping
     ResponseEntity<Void> delete(Long mobileTelecomId);

@@ -1,7 +1,7 @@
 package com.kgh.membership.acceptance;
 
-import com.kgh.membership.domain.model.mobile.MobileTelecom;
-import com.kgh.membership.domain.model.mobile.MobileTelecomRepository;
+import com.kgh.membership.domain.model.mobile.telecom.MobileTelecom;
+import com.kgh.membership.domain.model.mobile.telecom.MobileTelecomRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
