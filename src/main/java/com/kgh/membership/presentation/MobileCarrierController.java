@@ -2,6 +2,7 @@ package com.kgh.membership.presentation;
 
 import com.kgh.membership.application.MobileCarrierService;
 import com.kgh.membership.application.dto.MobileCarrierDTO;
+import com.kgh.membership.presentation.annotation.CarrierId;
 import com.kgh.membership.presentation.api.MobileCarrierAPI;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

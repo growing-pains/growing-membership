@@ -1,4 +1,6 @@
-package com.kgh.membership.presentation;
+package com.kgh.membership.presentation.annotation;
+
+import com.kgh.membership.presentation.ValidNumberValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

@@ -1,5 +1,7 @@
 package com.kgh.membership.presentation;
 
+import com.kgh.membership.presentation.annotation.MobileTelecomId;
+
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 

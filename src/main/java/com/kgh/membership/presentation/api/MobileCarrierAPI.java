@@ -1,7 +1,7 @@
 package com.kgh.membership.presentation.api;
 
 import com.kgh.membership.application.dto.MobileCarrierDTO;
-import com.kgh.membership.presentation.CarrierId;
+import com.kgh.membership.presentation.annotation.CarrierId;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
